@@ -8,29 +8,43 @@
 <body>
 
     <?php
+        $Risultato = "";
 
-        $Risultato = ""
+        
+        if ($_POST) {
+            $operatore = $_POST['operatore'];
+            $a = $_POST['a'];
+            $b = $_POST['b'];
 
-
-
-
-
-
+            if ($operatore == "somma") {
+                $Risultato = $a + $b;
+            }
+            if ($operatore == "sottrazione") {
+                $Risultato = $a - $b;
+            }
+            if ($operatore == "moltiplicazione") {
+                $Risultato = $a * $b;
+            }
+            if ($operatore == "divisione") {
+                $Risultato = $a / $b;
+            }
+        }
     ?>
     <h1>Calcolatrice</h1>
-    <form action="">
+    
+    <form method="POST">
         <br>
         <div>
             <label for="a"> a: </label>
             <input id="a" type="text" name="a" />
-            
         </div>
         <div>
-            <label for="a"> b: </label>
+            
+            <label for="b"> b: </label>
             <input id="b" type="text" name="b" />
         </div>
         <br>
-        <fieldset>
+        <fieldset style="width: 300px">
                 <legend>operatori</legend>
                 <div>
                     <input id="somma" type="radio" name="operatore" value="somma" />
@@ -51,7 +65,7 @@
 
         </fieldset>
         <br>
-        <fieldset>
+        <fieldset style="width: 300px">
                 <legend>opzioni</legend>
                 <div>
                     <input id="absolute" type="checkbox" name="options[]" value="absolute" />
@@ -66,11 +80,11 @@
                     <label for="arrotonda"> arrotonda a 2 decimali </label>
                 </div>
 
-        </fieldset>
+        </fieldset >
         <br>
         <input type="submit" value="calcola">
         <br>
-        <p>Risultato: <?php  echo $Risultato ?></p>
+        <p>Risultato: <?php echo $Risultato ?></p>
     </form>
 </body>
 </html>
