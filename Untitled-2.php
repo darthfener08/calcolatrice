@@ -29,6 +29,10 @@
                 $Risultato = $a / $b;
             }
         }
+
+
+
+        
     ?>
     <h1>Calcolatrice</h1>
     
