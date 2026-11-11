@@ -28,6 +28,23 @@
             if ($operatore == "divisione") {
                 $Risultato = $a / $b;
             }
+
+            if (isset($_POST['options'])) {
+                $opzioni = $_POST['options'];
+
+                // Valore assoluto
+                if (in_array("absolute", $opzioni)) {
+                    $Risultato = abs($Risultato);
+                }
+                // Elevamento al quadrato
+                if (in_array("square", $opzioni)) {
+                    $Risultato = $Risultato * $Risultato;
+                }
+                // Arrotondamento a 2 cifre decimali
+                if (in_array("arrotonda", $opzioni)) {
+                    $Risultato = round($Risultato, 2);
+                }
+            }
         }
 
 
